@@ -56,7 +56,7 @@ PUT/     http://localhost:5000/billEasyLibrary/book/:id
 body
 {
 	"title":"To Kill a Mockingbird 2",
-	"author":"Harper Lee 2",
+	"author":"Harper Lee 2"
 }
 
 path parameter
