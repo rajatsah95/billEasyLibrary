@@ -14,7 +14,7 @@
 ---------
 POST/    http://localhost:5000/billEasyLibrary/auth/signup
 
-body
+body-
 {
 	"name":"l",
 	"email":"l@gmail.com",
@@ -25,7 +25,7 @@ body
 ----------
 POST/    http://localhost:5000/billEasyLibrary/auth/login
 
-body
+body-
 {
 	"email":"l@gmail.com",
 	"password":"123"
@@ -39,69 +39,70 @@ body
 ----------
 POST/    http://localhost:5000/billEasyLibrary/book
 
-body
+body-
 {
 	"title":"To Kill a Mockingbird",
 	"author":"Harper Lee",
 	"genre":"Fantasy"
 }
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
 
 # Update
 -----------
 PUT/     http://localhost:5000/billEasyLibrary/book/:id
 
-body
+body-
 {
 	"title":"To Kill a Mockingbird 2",
 	"author":"Harper Lee 2"
 }
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
 
 # Delete
 ----------
 DELETE/    http://localhost:5000/billEasyLibrary/book/:id
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
 
 # getAllBook
 --------------
 GET/       http://localhost:5000/billEasyLibrary/book
 
-query parameters
-pageNumber    1
-pageSize      10
-author        J.R.R. Tolkien
-genre         Fantasy
+query parameters-
+pageNumber as   '1'
+pageSize   as   '10'
+author     as   'J.R.R. Tolkien'
+genre      as   'Fantasy'
 
 # getBookByIdWithReviewAndRating
 ----------------------------------
 GET/       http://localhost:5000/billEasyLibrary/book/:id
 
-query parameters
-pageNumber     1
-pageSize       5
+query parameters-
+pageNumber  as   '1'
+pageSize    as   '5'
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
 # getBookBySearch
 -------------------
 GET/       http://localhost:5000/billEasyLibrary/search
 
-query parameters
-searchText     Tolkien
+query parameters-
+searchText  as   'Tolkien' for author or 'lord of the Rings' for title(partial and case-insensitive)
+
 
 -----------
 # Review
@@ -111,40 +112,40 @@ searchText     Tolkien
 ----------
 POST/      http://localhost:5000/billEasyLibrary/book/:id/review
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
-body
+body-
 {
 	"review":"b"
 }
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
 
 # Update
 -----------
 PUT/       http://localhost:5000/billEasyLibrary/review/:id
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
-body
+body-
 {
 	"review":"aa"
 }
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
 
 # Delete
 ----------
 DELETE/    http://localhost:5000/billEasyLibrary/review/:id
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
 
 -----------
@@ -155,15 +156,15 @@ token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxM
 ----------
 POST/    http://localhost:5000/billEasyLibrary/book/:id/rating
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
-body
+body-
 {
 	"rating":3
 }
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
 
 
@@ -171,23 +172,23 @@ token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxM
 -----------
 PUT/         http://localhost:5000/billEasyLibrary/rating/:id
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
-body
+body-
 {
 	"rating":6
 }
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
 
 # Delete
 ----------
 DELETE/      http://localhost:5000/billEasyLibrary/rating/:id
 
-path parameter
+path parameter-
 id  as  '683803b1aa5bca19b20c67be'
 
-headers
+headers-
 token as 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzgwMDhiMGQxMmFhM2MxMThhYTAxMyIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NDg1MDEwMTYsImV4cCI6MTc0ODUwNDYxNn0.4byosUPVdIv9XLUf2bckeI1o-JLVUJlPIuo_QVXFHCM'
